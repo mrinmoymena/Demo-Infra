@@ -1,13 +1,13 @@
 resource "aws_eks_node_group" "eks_demo_node_group" {
-  cluster_name    = aws_eks_cluster.eks_demo.name
+  cluster_name = aws_eks_cluster.eks_demo.name
   node_group_name = "eks_demo_node_group"
-  node_role_arn   = aws_iam_role.eks_demo_node_group_iam.arn
-  subnet_ids      = aws_subnet.eks_demo_sn[*].id
+  node_role_arn = aws_iam_role.eks_demo_node_group_iam.arn
+  subnet_ids = aws_subnet.eks_demo_sn[*].id
 
   scaling_config {
     desired_size = 2
-    max_size     = 3
-    min_size     = 2
+    max_size = 3
+    min_size = 2
   }
 
   depends_on = [
@@ -19,6 +19,7 @@ resource "aws_eks_node_group" "eks_demo_node_group" {
   remote_access {
     ec2_ssh_key = "mmena-playground"
   }
+}
   
 
 resource "aws_iam_role" "eks_demo_node_group_iam" {

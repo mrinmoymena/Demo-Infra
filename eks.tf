@@ -15,6 +15,7 @@ resource "aws_eks_cluster" "eks_demo" {
   depends_on = [
     "aws_iam_role_policy_attachment.eks_demo_cluster_policy",
     "aws_iam_role_policy_attachment.eks_demo_service_policy",
+    "aws_iam_role_policy_attachment.eks_demo_ssm_managed_policy",
     "aws_cloudwatch_log_group.eks_demo_log_group",
   ]
   
