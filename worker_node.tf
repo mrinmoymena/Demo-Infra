@@ -20,13 +20,6 @@ resource "aws_eks_node_group" "eks_demo_node_group" {
     ec2_ssh_key = "mmena-playground"
   }
   
-  provisioner "remote-exec" {
-    inline = [
-      "wget https://d1wk0tztpsntt1.cloudfront.net/linux/latest/install -P /tmp/",
-      "sudo bash /tmp/install"
-    ]
-  }
-}
 
 resource "aws_iam_role" "eks_demo_node_group_iam" {
   name = "eks_demo_node_group_iam"
