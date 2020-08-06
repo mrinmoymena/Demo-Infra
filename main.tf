@@ -1,8 +1,6 @@
 provider "aws" {
-  region  = "us-east-2"
+  region  = "ap-south-1"
   version 			= ">= 2.38.0"
-  shared_credentials_file 	= "/home/nfs/ssuri/.aws/credentials"
-  profile                	= "eks-playground"
 }
 
 # Using these data sources allows the configuration to be
