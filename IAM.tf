@@ -28,7 +28,7 @@ resource "aws_iam_role_policy_attachment" "eks_demo_service_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "eks_demo_ssm_managed_policy" {
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonSSMManagedInstanceCore"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
   role       = "${aws_iam_role.eks_demo_iam.name}"
 }
 
